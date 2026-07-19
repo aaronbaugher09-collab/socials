@@ -1,33 +1,47 @@
 emailjs.init("SBYRWrYyWo3U4q21j");
 
 
-document.getElementById("nannyForm")
+document
+.getElementById("nannyForm")
 .addEventListener("submit", function(e){
 
-    if(
-    !phone.checkValidity() ||
-    !email.checkValidity()
-){
-    return;
-}
     e.preventDefault();
 
 
     const formData = {
+
         name: document.getElementById("name").value,
+
         phone: document.getElementById("phone").value,
+
         email: document.getElementById("email").value,
-        contactMethod: document.getElementById("contactMethod").value,
-        children: document.getElementById("children").value,
-        ages: document.getElementById("ages").value,
-        careType: document.getElementById("careType").value,
-        startDate: document.getElementById("startDate").value,
-        hours: document.getElementById("hours").value,
-        message: document.getElementById("message").value
+
+        contactMethod:
+        document.getElementById("contactMethod").value,
+
+        children:
+        document.getElementById("children").value,
+
+        ages:
+        document.getElementById("ages").value,
+
+        careType:
+        document.getElementById("careType").value,
+
+        startDate:
+        document.getElementById("startDate").value,
+
+        hours:
+        document.getElementById("hours").value,
+
+        message:
+        document.getElementById("message").value
+
     };
 
 
     // Send request to Ashlyn
+
     emailjs.send(
         "service_84maz4r",
         "template_q3q3ldg",
@@ -37,7 +51,9 @@ document.getElementById("nannyForm")
 
     .then(()=>{
 
-        // Send confirmation to parent
+
+        // Send confirmation email to parent
+
         return emailjs.send(
             "service_84maz4r",
             "template_1gks8vm",
@@ -47,25 +63,34 @@ document.getElementById("nannyForm")
             }
         );
 
+
     })
 
 
     .then(()=>{
 
+
         document.getElementById("status").innerHTML =
         "Thank you! Your request has been submitted.";
 
-        document.getElementById("nannyForm").reset();
+
+        document
+        .getElementById("nannyForm")
+        .reset();
+
 
     })
 
 
     .catch((error)=>{
 
+
         console.log("EmailJS Error:", error);
+
 
         document.getElementById("status").innerHTML =
         "Something went wrong. Please try again.";
+
 
     });
 
