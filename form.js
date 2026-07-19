@@ -1,4 +1,4 @@
-emailjs.init("YOUR_PUBLIC_KEY");
+emailjs.init("SBYRWrYyWo3U4q21j");
 
 document.getElementById("nannyForm")
 .addEventListener("submit", function(event){
