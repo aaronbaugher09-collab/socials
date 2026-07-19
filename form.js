@@ -34,7 +34,7 @@ document.getElementById("nannyForm")
         // Send confirmation to parent
         return emailjs.send(
             "service_84maz4r",
-            "YOUR_CONFIRMATION_TEMPLATE_ID",
+            "template_1gks8vm",
             {
                 name: formData.name,
                 email: formData.email
