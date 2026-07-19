@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Book a Consultation</title>
+
+<link rel="icon" href="favicon.png">
+
+<style>
+
+:root {
+    --bg: #f2f2f7;
+    --card: #ffffff;
+    --text: #1c1c1e;
+    --button: #AD9D90;
+    --button-hover: #BEBEBB;
+}
+
+body {
+    margin:0;
+    padding:30px 15px;
+    font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    display:flex;
+    justify-content:center;
+}
+
+.card {
+    width:100%;
+    max-width:420px;
+    background:var(--card);
+    border-radius:24px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+h1 {
+    text-align:center;
+}
+
+label {
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:600;
+}
+
+input,
+textarea {
+    width:100%;
+    padding:12px;
+    border-radius:12px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+textarea {
+    height:100px;
+}
+
+.cta-button {
+    width:100%;
+    margin-top:25px;
+    background:var(--button);
+    color:white;
+    border:none;
+    padding:16px;
+    border-radius:14px;
+    font-weight:600;
+    font-size:16px;
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.cta-button:hover {
+    background:var(--button-hover);
+    transform:translateY(-3px);
+    box-shadow:0 8px 15px rgba(0,0,0,.2);
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="card">
+
+<h1>
+Book a Consultation
+</h1>
+
+
+<form id="nannyForm">
+
+<label>Name</label>
+<input id="name" required>
+
+
+<label>Phone Number</label>
+<input id="phone" required>
+
+
+<label>Email</label>
+<input id="email" required>
+
+
+<label>Number of Children</label>
+<input id="children" type="number" required>
+
+
+<label>Message</label>
+<textarea id="message"></textarea>
+
+
+<button class="cta-button" type="submit">
+Send Request
+</button>
+
+
+<p id="status"></p>
+
+</form>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script src="form.js"></script>
+
+</body>
+
+</html>
