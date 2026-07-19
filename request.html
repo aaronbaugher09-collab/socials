@@ -96,13 +96,18 @@ textarea.invalid {
     font-weight:600;
     font-size:16px;
     cursor:pointer;
-    transition:.25s ease;
+    transition:all .25s ease;
 }
 
 .cta-button:hover {
     background:var(--button-hover);
     transform:translateY(-3px);
     box-shadow:0 8px 15px rgba(0,0,0,.2);
+}
+
+.cta-button:active {
+    transform:translateY(0);
+    box-shadow:none;
 }
 
 </style>
