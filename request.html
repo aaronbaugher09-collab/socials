@@ -89,6 +89,13 @@ select {
     font-size:16px;
     background:white;
 }
+    input:invalid {
+    border: 2px solid #d9534f;
+}
+
+input:valid {
+    border: 1px solid #ccc;
+}
 </style>
 
 </head>
@@ -110,12 +117,25 @@ Book a Consultation
 
 
 <label>Phone Number</label>
-<input id="phone" required>
+
+<input
+    id="phone"
+    type="tel"
+    placeholder="555-123-4567"
+    pattern="[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{4}"
+    title="Please enter a valid phone number (example: 555-123-4567)"
+    required
+>
 
 
 <label>Email</label>
-<input id="email" required>
 
+<input
+    id="email"
+    type="email"
+    placeholder="example@email.com"
+    required
+>
     <label>Preferred Contact Method</label>
 
 <select id="contactMethod" required>
