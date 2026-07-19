@@ -50,17 +50,40 @@ label {
 }
 
 input,
-textarea {
+textarea,
+select {
+
     width:100%;
     padding:12px;
     border-radius:12px;
     border:1px solid #ccc;
     font-size:16px;
+    font-family:inherit;
+    background:white;
 }
 
 textarea {
     height:100px;
+    resize:none;
 }
+
+
+/* Validation */
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border:2px solid #d9534f;
+}
+
+input.valid,
+select.valid,
+textarea.valid {
+    border:2px solid #6aaa64;
+}
+
+
+/* Button */
 
 .cta-button {
     width:100%;
@@ -81,21 +104,7 @@ textarea {
     transform:translateY(-3px);
     box-shadow:0 8px 15px rgba(0,0,0,.2);
 }
-select {
-    width:100%;
-    padding:12px;
-    border-radius:12px;
-    border:1px solid #ccc;
-    font-size:16px;
-    background:white;
-}
-   input:user-invalid {
-    border: 2px solid #d9534f;
-}
 
-input:user-valid {
-    border: 1px solid #ccc;
-}
 </style>
 
 </head>
@@ -112,7 +121,9 @@ Book a Consultation
 
 <form id="nannyForm">
 
+
 <label>Name</label>
+
 <input
     id="name"
     type="text"
@@ -127,8 +138,8 @@ Book a Consultation
     id="phone"
     type="tel"
     placeholder="555-123-4567"
-    pattern="[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{4}"
-    title="Please enter a valid phone number (example: 555-123-4567)"
+    pattern="(\([0-9]{3}\)\s?|[0-9]{3}[- ]?)[0-9]{3}[- ]?[0-9]{4}"
+    title="Please enter a valid 10 digit phone number"
     required
 >
 
@@ -139,27 +150,36 @@ Book a Consultation
     id="email"
     type="email"
     placeholder="example@email.com"
+    title="Please enter a valid email address"
     required
 >
-    <label>Preferred Contact Method</label>
+
+
+<label>Preferred Contact Method</label>
 
 <select id="contactMethod" required>
 
     <option value="">Select an option</option>
-    <option value="Phone Call">Phone Call</option>
     <option value="Text Message">Text Message</option>
+    <option value="Phone Call">Phone Call</option>
     <option value="Email">Email</option>
 
 </select>
 
+
+
 <label>Number of Children</label>
+
 <input 
-    id="children" 
-    type="number" 
-    min="1" 
-    step="1" 
+    id="children"
+    type="number"
+    min="1"
+    step="1"
     required
 >
+
+
+
 <label>Children's Ages</label>
 
 <input
@@ -170,7 +190,10 @@ Book a Consultation
     title="Please enter the age(s) of the children"
     required
 >
-    <label>Type of Care Needed</label>
+
+
+
+<label>Type of Care Needed</label>
 
 <select id="careType" required>
 
@@ -179,9 +202,12 @@ Book a Consultation
     <option value="One Time">One Time</option>
     <option value="Part Time">Part Time</option>
     <option value="Full Time">Full Time</option>
-    <option value="Occasional / As Needed">Occasional / As Needed</option>
+    <option value="Occasional / As Needed">
+        Occasional / As Needed
+    </option>
 
 </select>
+
 
 
 <label>Preferred Start Date</label>
@@ -191,61 +217,114 @@ Book a Consultation
     type="date"
     required
 >
-    <label>Typical Hours Needed</label>
+
+
+
+<label>Typical Hours Needed</label>
 
 <input 
-    id="hours" 
+    id="hours"
     type="text"
     placeholder="Example: Monday-Friday 8am-4pm"
     required
 >
+
+
+
 <label>Message</label>
-<textarea id="message"></textarea>
+
+<textarea 
+    id="message"
+    placeholder="Anything else you would like Ashlyn to know?"
+></textarea>
 
 
-<button class="cta-button" type="submit">
-Send Request
+
+<button 
+    class="cta-button" 
+    type="submit">
+    Send Request
 </button>
 
 
 <p id="status"></p>
+
 
 </form>
 
 </div>
 
 
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    <script>
+
+
+<script>
+
+// Live validation
+
 document.querySelectorAll("input, select, textarea")
 .forEach(field => {
 
-    field.addEventListener("input", function(){
 
-        if (this.checkValidity()) {
-            this.style.borderColor = "#ccc";
+    field.addEventListener("blur", function(){
+
+        if(this.checkValidity()){
+
+            this.classList.remove("invalid");
+            this.classList.add("valid");
+
         } else {
-            this.style.borderColor = "#d9534f";
+
+            this.classList.remove("valid");
+            this.classList.add("invalid");
+
         }
 
     });
 
+
+    field.addEventListener("input", function(){
+
+        if(this.checkValidity()){
+
+            this.classList.remove("invalid");
+            this.classList.add("valid");
+
+        }
+        else {
+
+            this.classList.remove("valid");
+            this.classList.add("invalid");
+
+        }
+
+    });
+
+
 });
+
+
+
+// Prevent past dates
+
+const today = new Date()
+    .toISOString()
+    .split("T")[0];
+
+
+document
+.getElementById("startDate")
+.setAttribute("min", today);
+
+
 </script>
 
-    <script>
 
-const today = new Date().toISOString().split("T")[0];
 
-document.getElementById("startDate").setAttribute(
-    "min",
-    today
-);
-
-</script>
-    
 <script src="form.js"></script>
+
 
 </body>
 
