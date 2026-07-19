@@ -52,7 +52,6 @@ label {
 input,
 textarea,
 select {
-
     width:100%;
     padding:12px;
     border-radius:12px;
@@ -70,62 +69,20 @@ textarea {
 
 /* Validation */
 
-// Custom field validation
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border:2px solid #d9534f;
+}
 
-const phone = document.getElementById("phone");
-const email = document.getElementById("email");
-
-
-function validatePhone(){
-
-    const digits = phone.value.replace(/\D/g,'');
-
-    if(phone.value !== "" && digits.length !== 10){
-
-        phone.classList.add("invalid");
-        document.getElementById("phoneError").style.display = "block";
-
-    } else {
-
-        phone.classList.remove("invalid");
-        document.getElementById("phoneError").style.display = "none";
-
-    }
-
+.error-message {
+    color:#d9534f;
+    font-size:14px;
+    margin-top:5px;
+    display:none;
 }
 
 
-
-function validateEmail(){
-
-    const emailPattern =
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-    if(email.value !== "" && !emailPattern.test(email.value)){
-
-        email.classList.add("invalid");
-        document.getElementById("emailError").style.display = "block";
-
-    } else {
-
-        email.classList.remove("invalid");
-        document.getElementById("emailError").style.display = "none";
-
-    }
-
-}
-
-
-
-phone.addEventListener("input", validatePhone);
-
-phone.addEventListener("blur", validatePhone);
-
-
-email.addEventListener("input", validateEmail);
-
-email.addEventListener("blur", validateEmail);
 /* Button */
 
 .cta-button {
@@ -175,6 +132,7 @@ Book a Consultation
 >
 
 
+
 <label>Phone Number</label>
 
 <input
@@ -189,6 +147,7 @@ Book a Consultation
 </div>
 
 
+
 <label>Email</label>
 
 <input
@@ -201,6 +160,7 @@ Book a Consultation
 <div id="emailError" class="error-message">
     Please enter a valid email address.
 </div>
+
 
 
 <label>Preferred Contact Method</label>
@@ -226,6 +186,10 @@ Book a Consultation
     required
 >
 
+<div id="childrenError" class="error-message">
+    Please enter at least 1 child.
+</div>
+
 
 
 <label>Children's Ages</label>
@@ -234,10 +198,12 @@ Book a Consultation
     id="ages"
     type="text"
     placeholder="Example: 6 months, 2 years, and 5 years"
-    pattern=".*[0-9].*"
-    title="Please enter the age(s) of the children"
     required
 >
+
+<div id="agesError" class="error-message">
+    Please enter the children's ages.
+</div>
 
 
 
@@ -307,55 +273,145 @@ Book a Consultation
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 
-
 <script>
 
-// Show only errors
+// Phone Validation
 
-document.querySelectorAll("input, select, textarea")
-.forEach(field => {
+const phone = document.getElementById("phone");
 
-    function validateField() {
+function validatePhone(){
 
-        if (field.value === "") {
-            field.classList.remove("invalid");
-            return;
-        }
+    const digits = phone.value.replace(/\D/g,'');
 
+    if(phone.value !== "" && digits.length !== 10){
 
-        if (field.checkValidity()) {
-
-            field.classList.remove("invalid");
-
-        } else {
-
-            field.classList.add("invalid");
-
-        }
+        phone.classList.add("invalid");
+        document.getElementById("phoneError").style.display="block";
+        return false;
 
     }
 
+    phone.classList.remove("invalid");
+    document.getElementById("phoneError").style.display="none";
+    return true;
 
-    field.addEventListener("blur", validateField);
+}
 
-    field.addEventListener("input", validateField);
 
-});
-    
+
+// Email Validation
+
+const email = document.getElementById("email");
+
+function validateEmail(){
+
+    const emailPattern =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if(email.value !== "" && !emailPattern.test(email.value)){
+
+        email.classList.add("invalid");
+        document.getElementById("emailError").style.display="block";
+        return false;
+
+    }
+
+    email.classList.remove("invalid");
+    document.getElementById("emailError").style.display="none";
+    return true;
+
+}
+
+
+
+// Children Validation
+
+const children = document.getElementById("children");
+
+function validateChildren(){
+
+    if(children.value !== "" && children.value < 1){
+
+        children.classList.add("invalid");
+        document.getElementById("childrenError").style.display="block";
+        return false;
+
+    }
+
+    children.classList.remove("invalid");
+    document.getElementById("childrenError").style.display="none";
+    return true;
+
+}
+
+
+
+// Ages Validation
+
+const ages = document.getElementById("ages");
+
+function validateAges(){
+
+    if(ages.value !== "" && !/[0-9]/.test(ages.value)){
+
+        ages.classList.add("invalid");
+        document.getElementById("agesError").style.display="block";
+        return false;
+
+    }
+
+    ages.classList.remove("invalid");
+    document.getElementById("agesError").style.display="none";
+    return true;
+
+}
+
+
+
+phone.addEventListener("input", validatePhone);
+phone.addEventListener("blur", validatePhone);
+
+email.addEventListener("input", validateEmail);
+email.addEventListener("blur", validateEmail);
+
+children.addEventListener("input", validateChildren);
+ages.addEventListener("input", validateAges);
+
+
+
 // Prevent past dates
 
 const today = new Date()
-    .toISOString()
-    .split("T")[0];
-
+.toISOString()
+.split("T")[0];
 
 document
 .getElementById("startDate")
 .setAttribute("min", today);
 
 
-</script>
 
+// Stop invalid submissions
+
+document
+.getElementById("nannyForm")
+.addEventListener("submit", function(e){
+
+    if(
+        !validatePhone() ||
+        !validateEmail() ||
+        !validateChildren() ||
+        !validateAges()
+    ){
+
+        e.preventDefault();
+
+    }
+
+});
+
+</script>
 
 
 <script src="form.js"></script>
