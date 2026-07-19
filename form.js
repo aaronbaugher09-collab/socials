@@ -18,6 +18,7 @@ contactMethod: document.getElementById("contactMethod").value,
 children: document.getElementById("children").value,
 ages: document.getElementById("ages").value,
 careType: document.getElementById("careType").value,
+startDate: document.getElementById("startDate").value,
 hours: document.getElementById("hours").value,
 message: document.getElementById("message").value
 }
