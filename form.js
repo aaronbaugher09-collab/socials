@@ -4,6 +4,12 @@ emailjs.init("SBYRWrYyWo3U4q21j");
 document.getElementById("nannyForm")
 .addEventListener("submit", function(e){
 
+    if(
+    !phone.checkValidity() ||
+    !email.checkValidity()
+){
+    return;
+}
     e.preventDefault();
 
 
