@@ -156,13 +156,24 @@ Book a Consultation
     required
 >
 <label>Children's Ages</label>
-<input 
-    id="ages" 
-    type="text" 
-    placeholder="Example: 2, 5, and 7"
+
+<input
+    id="ages"
+    type="text"
+    placeholder="Example: 6 months, 2 years, and 5 years"
+    pattern=".*[0-9].*"
+    title="Please enter the age(s) of the children"
     required
 >
     <label>Type of Care Needed</label>
+
+    <label>Preferred Start Date</label>
+
+<input
+    id="startDate"
+    type="date"
+    required
+>
 
 <select id="careType" required>
 
@@ -200,6 +211,34 @@ Send Request
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+    <script>
+document.querySelectorAll("input, select, textarea")
+.forEach(field => {
+
+    field.addEventListener("input", function(){
+
+        if (this.checkValidity()) {
+            this.style.borderColor = "#ccc";
+        } else {
+            this.style.borderColor = "#d9534f";
+        }
+
+    });
+
+});
+</script>
+
+    <script>
+
+const today = new Date().toISOString().split("T")[0];
+
+document.getElementById("startDate").setAttribute(
+    "min",
+    today
+);
+
+</script>
+    
 <script src="form.js"></script>
 
 </body>
