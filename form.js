@@ -14,6 +14,7 @@ emailjs.send(
 name: document.getElementById("name").value,
 phone: document.getElementById("phone").value,
 email: document.getElementById("email").value,
+contactMethod: document.getElementById("contactMethod").value,
 children: document.getElementById("children").value,
 ages: document.getElementById("ages").value,
 careType: document.getElementById("careType").value,
