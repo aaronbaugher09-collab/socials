@@ -70,19 +70,62 @@ textarea {
 
 /* Validation */
 
-input.invalid,
-select.invalid,
-textarea.invalid {
-    border:2px solid #d9534f;
+// Custom field validation
+
+const phone = document.getElementById("phone");
+const email = document.getElementById("email");
+
+
+function validatePhone(){
+
+    const digits = phone.value.replace(/\D/g,'');
+
+    if(phone.value !== "" && digits.length !== 10){
+
+        phone.classList.add("invalid");
+        document.getElementById("phoneError").style.display = "block";
+
+    } else {
+
+        phone.classList.remove("invalid");
+        document.getElementById("phoneError").style.display = "none";
+
+    }
+
 }
 
-input.valid,
-select.valid,
-textarea.valid {
-    border:2px solid #6aaa64;
+
+
+function validateEmail(){
+
+    const emailPattern =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if(email.value !== "" && !emailPattern.test(email.value)){
+
+        email.classList.add("invalid");
+        document.getElementById("emailError").style.display = "block";
+
+    } else {
+
+        email.classList.remove("invalid");
+        document.getElementById("emailError").style.display = "none";
+
+    }
+
 }
 
 
+
+phone.addEventListener("input", validatePhone);
+
+phone.addEventListener("blur", validatePhone);
+
+
+email.addEventListener("input", validateEmail);
+
+email.addEventListener("blur", validateEmail);
 /* Button */
 
 .cta-button {
@@ -138,10 +181,12 @@ Book a Consultation
     id="phone"
     type="tel"
     placeholder="555-123-4567"
-    pattern="[0-9\-\(\) ]{10,}"
-    title="Please enter a valid 10 digit phone number"
     required
 >
+
+<div id="phoneError" class="error-message">
+    Please enter a valid 10-digit phone number.
+</div>
 
 
 <label>Email</label>
@@ -150,9 +195,12 @@ Book a Consultation
     id="email"
     type="email"
     placeholder="example@email.com"
-    title="Please enter a valid email address"
     required
 >
+
+<div id="emailError" class="error-message">
+    Please enter a valid email address.
+</div>
 
 
 <label>Preferred Contact Method</label>
@@ -262,16 +310,14 @@ Book a Consultation
 
 <script>
 
-// Improved live validation
+// Show only errors
 
 document.querySelectorAll("input, select, textarea")
 .forEach(field => {
 
     function validateField() {
 
-        // Don't show green/red before the user interacts
         if (field.value === "") {
-            field.classList.remove("valid");
             field.classList.remove("invalid");
             return;
         }
@@ -280,11 +326,9 @@ document.querySelectorAll("input, select, textarea")
         if (field.checkValidity()) {
 
             field.classList.remove("invalid");
-            field.classList.add("valid");
 
         } else {
 
-            field.classList.remove("valid");
             field.classList.add("invalid");
 
         }
@@ -297,7 +341,7 @@ document.querySelectorAll("input, select, textarea")
     field.addEventListener("input", validateField);
 
 });
-
+    
 // Prevent past dates
 
 const today = new Date()
