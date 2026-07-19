@@ -5,7 +5,7 @@ document.getElementById("nannyForm")
 
     event.preventDefault();
 
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    emailjs.send("service_84maz4r", "template_q3q3ldg", {
 
         name: document.getElementById("name").value,
         phone: document.getElementById("phone").value,
