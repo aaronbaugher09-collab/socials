@@ -15,6 +15,9 @@ name: document.getElementById("name").value,
 phone: document.getElementById("phone").value,
 email: document.getElementById("email").value,
 children: document.getElementById("children").value,
+ages: document.getElementById("ages").value,
+careType: document.getElementById("careType").value,
+hours: document.getElementById("hours").value,
 message: document.getElementById("message").value
 }
 
