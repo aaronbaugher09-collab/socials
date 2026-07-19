@@ -1,14 +1,17 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Miss Ashlyn The Nanny</title>
+
 <!-- Favicons -->
 <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="shortcut icon" href="favicon.png">
+
 <style>
 :root {
     --bg: #f2f2f7;
@@ -49,6 +52,19 @@ body {
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    animation: fadeIn .8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .banner {
@@ -102,11 +118,13 @@ h1 {
     border-radius: 14px;
     margin-bottom: 12px;
     font-weight: 600;
-    transition: .2s;
+    transform: translateY(0);
+    transition: all .25s ease;
 }
 
 .link:hover {
     background: var(--button-hover);
+    transform: translateY(-2px);
 }
 
 .footer {
@@ -134,8 +152,12 @@ h1 {
         </p>
 
         <p class="bio">
-         Rates, specialties, or a short professional bio can go here.
+            Rates, specialties, or a short professional bio can go here.
         </p>
+
+        <a class="link" href="mailto:baugherashlyn@gmail.com">
+            Book a Consultation
+        </a>
 
         <a class="link" href="https://instagram.com">
             Instagram
@@ -171,3 +193,4 @@ h1 {
 
 </body>
 </html>
+```
