@@ -262,50 +262,41 @@ Book a Consultation
 
 <script>
 
-// Live validation
+// Improved live validation
 
 document.querySelectorAll("input, select, textarea")
 .forEach(field => {
 
+    function validateField() {
 
-    field.addEventListener("blur", function(){
+        // Don't show green/red before the user interacts
+        if (field.value === "") {
+            field.classList.remove("valid");
+            field.classList.remove("invalid");
+            return;
+        }
 
-        if(this.checkValidity()){
 
-            this.classList.remove("invalid");
-            this.classList.add("valid");
+        if (field.checkValidity()) {
+
+            field.classList.remove("invalid");
+            field.classList.add("valid");
 
         } else {
 
-            this.classList.remove("valid");
-            this.classList.add("invalid");
+            field.classList.remove("valid");
+            field.classList.add("invalid");
 
         }
 
-    });
+    }
 
 
-    field.addEventListener("input", function(){
+    field.addEventListener("blur", validateField);
 
-        if(this.checkValidity()){
-
-            this.classList.remove("invalid");
-            this.classList.add("valid");
-
-        }
-        else {
-
-            this.classList.remove("valid");
-            this.classList.add("invalid");
-
-        }
-
-    });
-
+    field.addEventListener("input", validateField);
 
 });
-
-
 
 // Prevent past dates
 
