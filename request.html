@@ -81,7 +81,14 @@ textarea {
     transform:translateY(-3px);
     box-shadow:0 8px 15px rgba(0,0,0,.2);
 }
-
+select {
+    width:100%;
+    padding:12px;
+    border-radius:12px;
+    border:1px solid #ccc;
+    font-size:16px;
+    background:white;
+}
 </style>
 
 </head>
@@ -111,9 +118,40 @@ Book a Consultation
 
 
 <label>Number of Children</label>
-<input id="children" type="number" required>
+<input 
+    id="children" 
+    type="number" 
+    min="1" 
+    step="1" 
+    required
+>
+<label>Children's Ages</label>
+<input 
+    id="ages" 
+    type="text" 
+    placeholder="Example: 2, 5, and 7"
+    required
+>
+    <label>Type of Care Needed</label>
 
+<select id="careType" required>
 
+    <option value="">Select an option</option>
+    <option value="Weekly">Weekly</option>
+    <option value="One Time">One Time</option>
+    <option value="Part Time">Part Time</option>
+    <option value="Full Time">Full Time</option>
+    <option value="Occasional / As Needed">Occasional / As Needed</option>
+
+</select>
+    <label>Typical Hours Needed</label>
+
+<input 
+    id="hours" 
+    type="text"
+    placeholder="Example: Monday-Friday 8am-4pm"
+    required
+>
 <label>Message</label>
 <textarea id="message"></textarea>
 
