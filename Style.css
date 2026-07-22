@@ -24,19 +24,22 @@
 body {
     margin: 0;
     padding: 40px 20px;
+
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
     background: var(--bg);
     color: var(--text);
+
     display: flex;
     justify-content: center;
 }
+
 
 /*----------------------------------
     STICKY NAVIGATION BAR
 ----------------------------------*/
 
-/* This is ready for later when we
-   build the navigation menu. */
+/* Ready for when we add the menu */
 
 nav {
     position: sticky;
@@ -53,15 +56,25 @@ nav {
 
 
 /*----------------------------------
-    MAIN CARD
+    WEBSITE CONTAINER
 ----------------------------------*/
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
+
     margin: auto;
-    padding: 0 30px;
+
+    background: var(--card);
+
+    border-radius: 30px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
+    animation: fadeIn .8s ease;
 }
+
 
 /*----------------------------------
     ANIMATIONS
@@ -87,7 +100,7 @@ nav {
 ----------------------------------*/
 
 .banner {
-    height: 220px;
+    height: 350px;
 
     background:
         linear-gradient(
@@ -106,15 +119,15 @@ nav {
 ----------------------------------*/
 
 .profile {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
 
     border-radius: 50%;
     object-fit: cover;
 
     display: block;
 
-    margin: -75px auto 0;
+    margin: -100px auto 0;
 
     border: 5px solid white;
     background: white;
@@ -128,27 +141,32 @@ nav {
 ----------------------------------*/
 
 .content {
-    padding: 20px 30px 30px;
+    padding: 40px;
     text-align: center;
 }
 
 
 h1 {
     margin: 10px 0 5px;
-    font-size: 32px;
+    font-size: 42px;
 }
 
 
 .subtitle {
     opacity: .75;
     margin-bottom: 20px;
+    font-size: 18px;
 }
 
 
 .bio {
-    line-height: 1.6;
+    line-height: 1.8;
     opacity: .8;
     margin-bottom: 30px;
+
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -172,6 +190,7 @@ h1 {
     margin-bottom: 12px;
 
     font-weight: 600;
+    font-size: 17px;
 
     transform: translateY(0);
     transition: all .25s ease;
@@ -202,18 +221,41 @@ h1 {
     MOBILE RESPONSIVE STYLES
 ----------------------------------*/
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     body {
         padding: 20px 10px;
     }
 
+    .container {
+        border-radius: 24px;
+    }
+
+    .banner {
+        height: 220px;
+    }
+
+    .profile {
+        width: 150px;
+        height: 150px;
+
+        margin: -75px auto 0;
+    }
+
     .content {
-        padding: 20px;
+        padding: 25px;
     }
 
     h1 {
-        font-size: 28px;
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .bio {
+        line-height: 1.6;
     }
 
 }
