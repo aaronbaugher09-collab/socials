@@ -160,7 +160,7 @@ h1 {
 .cta-button,
 .link {
 
-    display: square;
+    display: block;
 
     background: var(--button);
     color: white;
