@@ -1,42 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+/*----------------------------------
+    VARIABLES
+----------------------------------*/
 
-<head>
+:root {
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    color-scheme: light;
 
-<title>Get in Touch!</title>
-
-<link rel="icon" href="favicon.png">
-
-<style>
-
-:root{
     --bg:#f2f2f7;
     --card:#ffffff;
     --text:#1c1c1e;
+
     --button:#AD9D90;
     --button-hover:#BEBEBB;
+
 }
+
 
 /*----------------------------------
     GLOBAL
 ----------------------------------*/
 
-*{
-    box-sizing:border-box;
-}
-html{
-    max-width:100%;
-    over-flow-x:hidden;
-}
-  
-body{
+body {
 
-    margin:20px;
-    padding:18px 20px;
-  
+    margin:clamp(0px, 2vw, 20px);
+    padding:clamp(10px, 3vw, 20px);
+
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -45,18 +33,106 @@ body{
     background:var(--bg);
     color:var(--text);
 
-    overflow-x:hidden;
 }
 
 
 /*----------------------------------
-    CARD
+    STICKY NAVIGATION
 ----------------------------------*/
 
-.card{
+.nav-wrapper {
+
+justify-content: center;
+    position:sticky;
+    top:15px;
+
+    z-index:1000;
+
+    width:center;
+
+    display:flex;
+    justify-content:center;
+
+    padding-bottom:1%;
+
+}
+
+/*these are the options within the nav bar*/
+nav {
+
+    width:fit-content;
+    max-width:750px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:18px;
+
+    padding:15px 40px;
+
+    background:
+        rgba(255,255,255,.95);
+
+    backdrop-filter:
+        blur(16px);
+
+    border-radius:30px;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.10);
+
+}
+
+/*These are the font options for the items within the nav bar*/
+nav a {
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.2s ease;
+
+}
+
+
+nav a:hover {
+
+    opacity:.7;
+
+}
+
+/*these are the options for the get in touch button in nav bar*/
+.nav-button {
+
+    background:var(--button);
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+}
+
+
+.nav-button:hover {
+
+    background:var(--button-hover);
+
+}
+
+
+/*----------------------------------
+    WEBSITE CARD
+----------------------------------*/
+
+.container {
 
     width:100%;
-    max-width:700px;
+    max-width:1100px;
 
     margin:auto;
 
@@ -64,7 +140,7 @@ body{
 
     border-radius:30px;
 
-    overflow:visible;
+    overflow:hidden;
 
     box-shadow:
         0 10px 30px rgba(0,0,0,.15);
@@ -74,20 +150,34 @@ body{
 }
 
 
+.site-content {
+
+    width:100%;
+
+}
+
+
 /*----------------------------------
     ANIMATION
 ----------------------------------*/
 
-@keyframes fadeIn{
+@keyframes fadeIn {
 
-    from{
+    from {
+
         opacity:0;
+
         transform:translateY(20px);
+
     }
 
-    to{
+
+    to {
+
         opacity:1;
+
         transform:translateY(0);
+
     }
 
 }
@@ -97,9 +187,9 @@ body{
     BANNER
 ----------------------------------*/
 
-.form-banner{
+.banner {
 
-    height:180px;
+    height:clamp(180px, 30vw, 220px);
 
     background:
 
@@ -111,19 +201,21 @@ body{
         url("Flowers.JPG");
 
     background-size:cover;
+
     background-position:center;
-    Border-radius:30px 30px 0 0;
+
 }
 
 
 /*----------------------------------
-    PROFILE IMAGE
+    PROFILE
 ----------------------------------*/
 
-.form-profile{
+.profile {
 
-    width:140px;
-    height:140px;
+    width:clamp(150px, 25vw, 200px);
+
+    height:clamp(150px, 25vw, 200px);
 
     border-radius:50%;
 
@@ -131,7 +223,7 @@ body{
 
     display:block;
 
-    margin:-70px auto 20px;
+    margin:clamp(-75px, -12vw, -100px) auto 0;
 
     border:5px solid white;
 
@@ -147,28 +239,42 @@ body{
     CONTENT
 ----------------------------------*/
 
-.form-content{
+.content {
 
-    padding:40px;
+    padding:clamp(20px, 5vw, 40px);
+
+    text-align:center;
 
 }
 
 
-h1{
+h1 {
 
-    text-align:center;
-    margin-bottom:15px;
+    margin:10px 15px;
+
+    font-size:clamp(32px, 6vw, 42px);
 
 }
 
 
-.intro{
+.subtitle {
 
-    text-align:center;
-    line-height:1.7;
-    color:#666;
+    opacity:.75;
 
-    margin-bottom:35px;
+    font-size:18px;
+
+}
+
+
+.bio {
+
+    line-height:1.8;
+
+    opacity:.8;
+
+    max-width:700px;
+
+    margin:20px auto 30px;
 
 }
 
@@ -177,214 +283,78 @@ h1{
     BUTTONS
 ----------------------------------*/
 
-.back-home-btn {
-
-    position:fixed;
-
-    top:20px;
-
-    z-index:1000;
-
-    display:block;
-
-    width:fit-content;
-
-    margin-left:auto;
-
-    margin-right:10px;
-
-    background:var(--button);
-
-    color:var(--text);
-
-    text-decoration:none;
-
-    padding:6px 10px;
-
-    border-radius:12px;
-
-    font-weight:600;
-
-    transition:.25s ease;
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,.15);
-
-}
-
-
-.back-home-btn:hover{
-
-    background:var(--button-hover);
-    transform:translateY(-2px);
-
-}
-
-
-.cta-button{
-
-    width:100%;
-
-    margin-top:30px;
+.cta-button,
+.link {
+  
+    display:inline-block;
 
     background:var(--button);
 
     color:white;
 
-    border:none;
+    text-decoration:none;
 
-    padding:16px;
+    padding:16px 24px;
 
-    border-radius:14px;
+    border-radius:16px;
 
-    font-size:16px;
-    font-weight:600;
-
-    cursor:pointer;
+    font-weight:500;
 
     transition:.25s ease;
 
+    Text-align: center;
+
+}
+.Facebook{
+  text-align:right;
+  margin-top:20px;
+  
 }
 
-
-.cta-button:hover{
+.cta-button:hover,
+.link:hover {
 
     background:var(--button-hover);
 
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 8px 15px rgba(0,0,0,.15);
+    transform:translateY(-2px);
 
 }
 
 
 /*----------------------------------
-    FORM
+    SECTIONS
 ----------------------------------*/
 
-.section-title{
+.future-section {
 
-    font-size:20px;
-    font-weight:600;
+    padding:50px 14px;
 
-    margin-top:35px;
-    margin-bottom:10px;
-
-    padding-bottom:8px;
-
-    border-bottom:1px solid #e6e6e6;
-
-}
-
-
-label{
-
-    display:block;
-
-    margin-top:18px;
-    margin-bottom:6px;
-
-    font-weight:600;
-
-}
-
-
-input,
-textarea,
-select{
-
-    width:100%;
-  
-    max-width:100%;
-  
-    padding:14px;
-
-    border-radius:12px;
-
-    border:1px solid #d5d5d5;
-
-    font-size:16px;
-
-    font-family:inherit;
-
-    background:white;
-
-}
-/*----------------------------------
-    DATE INPUT
-----------------------------------*/
-
-input[type="date"] {
-
-    cursor:pointer;
-
-    display:block;
-
-    width:100%;
-
-    max-width:100%;
-
-    min-width:0;
-
-    min-height:48px;
-
-    padding:14px;
-
-    box-sizing:border-box;
-
-    -webkit-appearance:none;
-
-}
-
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-
-    cursor:pointer;
-
-    margin-right:0;
+    text-align:center;
 
 }
 
 
 /*----------------------------------
-    VALIDATION
+    FOOTER
 ----------------------------------*/
 
-input.invalid,
-select.invalid,
-textarea.invalid{
+.footer {
 
-    border:2px solid #d9534f;
+    padding:30px;
 
-}
-
-
-.error-message{
-
-    display:none;
-
-    color:#d9534f;
+    text-align:center;
 
     font-size:14px;
 
-    margin-top:5px;
+    opacity:.6;
 
 }
-
 
 /*----------------------------------
     MOBILE
 ----------------------------------*/
 
 @media(max-width:768px){
-
-    input[type="date"]{
-      font-size:16px;
-
-      width:100%;
-    }
-}
 
     body {
 
@@ -395,400 +365,12 @@ textarea.invalid{
     }
 
 
-    .card {
+    nav {
 
-        width:100%;
+        flex-wrap:wrap;
 
-        Border-radius:24px;
+        gap:15px;
 
-    }
-
-
-    .form-content {
-
-        padding:25px 15px;
+        padding:12px 20px;
 
     }
-
-
-    .form-banner {
-
-        height:150px;
-
-    }
-
-
-    .form-profile {
-
-        width:120px;
-        height:120px;
-
-        margin:-60px auto 20px;
-
-    }
-
-
-    h1 {
-
-        font-size:28px;
-
-    }
-
-
-    .intro {
-
-        font-size:15px;
-
-    }
-
-
-    .back-home-btn {
-        margin-left:auto;
-        margin-top:auto;
-
-    }
-
-  input,
-  textarea,
-  select{
-    width:100%;
-    max-width:100%;
-    
-  }
-    input[type="date"]{
-
-      width:100%;
-      max-width:100%;
-    }
-}
-
-</style>
-
-</head>
-
-
-<body>
-<a href="index.html" class="back-home-btn">
-            ← Back
-        </a>
-<div class="card">
-  
-    <div class="form-banner"></div>
-
-    <img
-        src="IMG_1141.jpeg"
-        alt="Ashlyn"
-        class="form-profile"
-    >
-
-    <div class="form-content">
-
-        <h1>Let's Find the Perfect Fit</h1>
-
-        <p class="intro">
-            Thank you for considering Miss Ashlyn's Sitter Services!
-            I'd love to learn more about your family and childcare needs.
-            Once I receive your request, I'll reach out using your preferred
-            contact method as soon as possible.
-        </p>
-
-
-        <form id="nannyForm">
-
-
-            <div class="section-title">
-                Contact Information
-            </div>
-
-
-            <label>Name</label>
-            <input
-                id="name"
-                type="text"
-                placeholder="Your Name"
-                required
-            >
-
-
-            <label>Phone Number</label>
-            <input
-                id="phone"
-                type="tel"
-                placeholder="555-123-4567"
-                required
-            >
-
-            <div id="phoneError" class="error-message">
-                Please enter a valid 10-digit phone number.
-            </div>
-
-
-            <label>Email</label>
-            <input
-                id="email"
-                type="email"
-                placeholder="example@email.com"
-                required
-            >
-
-            <div id="emailError" class="error-message">
-                Please enter a valid email address.
-            </div>
-
-
-            <label>Preferred Contact Method</label>
-
-            <select id="contactMethod" required>
-                <option value="">Select an option</option>
-                <option value="Text Message">Text Message</option>
-                <option value="Phone Call">Phone Call</option>
-                <option value="Email">Email</option>
-            </select>
-
-
-
-            <div class="section-title">
-                Your Family
-            </div>
-
-
-            <label>Number of Children</label>
-
-            <input
-                id="children"
-                type="number"
-                min="1"
-                step="1"
-                required
-            >
-
-            <div id="childrenError" class="error-message">
-                Please enter at least 1 child.
-            </div>
-
-
-            <label>Children's Ages</label>
-
-            <input
-                id="ages"
-                type="text"
-                placeholder="6 months, 2 years, and 5 years"
-                required
-            >
-
-            <div id="agesError" class="error-message">
-                Please enter the children's ages.
-            </div>
-
-
-
-            <div class="section-title">
-                Childcare Needs
-            </div>
-
-
-            <label>Type of Care Needed</label>
-
-            <select id="careType" required>
-
-                <option value="">Select an option</option>
-                <option value="Weekly">Weekly</option>
-                <option value="One Time">One Time</option>
-                <option value="Part Time">Part Time</option>
-                <option value="Full Time">Full Time</option>
-                <option value="Occasional / As Needed">
-                    Occasional / As Needed
-                </option>
-
-            </select>
-
-
-            <label for="startDate">
-              Preferred Start Date
-            </label>
-
-            <input
-    id="startDate"
-    type="date"
-    required
-    >
-
-            <label>Typical Hours Needed</label>
-
-            <input
-                id="hours"
-                type="text"
-                placeholder="Monday - Friday, 8 AM - 4 PM"
-                required
-            >
-
-
-            <div class="section-title">
-                Anything Else?
-            </div>
-
-
-            <label>Message</label>
-
-            <textarea
-                id="message"
-                placeholder="Anything else you'd like Ashlyn to know?"
-            ></textarea>
-
-
-            <button
-                class="cta-button"
-                type="submit">
-
-                Send Request
-
-            </button>
-
-            <p id="status"></p>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-
-// Phone Validation
-
-const phone = document.getElementById("phone");
-
-function validatePhone(){
-
-    const digits = phone.value.replace(/\D/g,'');
-
-    if(phone.value !== "" && digits.length !== 10){
-
-        phone.classList.add("invalid");
-        document.getElementById("phoneError").style.display="block";
-        return false;
-
-    }
-
-    phone.classList.remove("invalid");
-    document.getElementById("phoneError").style.display="none";
-    return true;
-
-}
-
-
-// Email Validation
-
-const email = document.getElementById("email");
-
-function validateEmail(){
-
-    const emailPattern =
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if(email.value !== "" && !emailPattern.test(email.value)){
-
-        email.classList.add("invalid");
-        document.getElementById("emailError").style.display="block";
-        return false;
-
-    }
-
-    email.classList.remove("invalid");
-    document.getElementById("emailError").style.display="none";
-    return true;
-
-}
-
-
-// Children Validation
-
-const children = document.getElementById("children");
-
-function validateChildren(){
-
-    if(children.value !== "" && children.value < 1){
-
-        children.classList.add("invalid");
-        document.getElementById("childrenError").style.display="block";
-        return false;
-
-    }
-
-    children.classList.remove("invalid");
-    document.getElementById("childrenError").style.display="none";
-    return true;
-
-}
-
-
-// Ages Validation
-
-const ages = document.getElementById("ages");
-
-function validateAges(){
-
-    if(ages.value !== "" && !/[0-9]/.test(ages.value)){
-
-        ages.classList.add("invalid");
-        document.getElementById("agesError").style.display="block";
-        return false;
-
-    }
-
-    ages.classList.remove("invalid");
-    document.getElementById("agesError").style.display="none";
-    return true;
-
-}
-
-
-phone.addEventListener("input", validatePhone);
-phone.addEventListener("blur", validatePhone);
-
-email.addEventListener("input", validateEmail);
-email.addEventListener("blur", validateEmail);
-
-children.addEventListener("input", validateChildren);
-ages.addEventListener("input", validateAges);
-
-
-// Prevent past dates
-
-const today = new Date()
-.toISOString()
-.split("T")[0];
-
-document
-.getElementById("startDate")
-.setAttribute("min", today);
-
-
-// Stop invalid submissions
-
-document
-.getElementById("nannyForm")
-.addEventListener("submit", function(e){
-
-    if(
-        !validatePhone() ||
-        !validateEmail() ||
-        !validateChildren() ||
-        !validateAges()
-    ){
-
-        e.preventDefault();
-
-    }
-
-});
-
-</script>
-
-<script src="form.js"></script>
-
-</body>
-</html>
