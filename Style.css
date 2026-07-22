@@ -71,6 +71,8 @@ body {
 
     border-radius: 30px;
 
+    isolation:isolate;
+
     box-shadow:
         0 10px 30px rgba(0,0,0,.15);
 
@@ -78,7 +80,10 @@ body {
 
 }
 
-
+.site-content {
+    overflow: hidden;
+    border-radius: 0 0 30px 30px;
+}
 
 /*----------------------------------
     NAVIGATION
