@@ -27,13 +27,16 @@
 *{
     box-sizing:border-box;
 }
-
+html{
+    max-width:100%;
+    over-flow-x:hidden;
+}
+  
 body{
-    max-width:100%
+
     margin:20px;
     padding:18px 20px;
-    overflow-x:hidden;
-    
+  
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -42,6 +45,7 @@ body{
     background:var(--bg);
     color:var(--text);
 
+    overflow-x:hidden;
 }
 
 
@@ -287,7 +291,9 @@ textarea,
 select{
 
     width:100%;
-
+  
+    max-width:100%;
+  
     padding:14px;
 
     border-radius:12px;
@@ -365,10 +371,10 @@ textarea.invalid{
 
 
     .card {
-        
+
         width:100%;
 
-        border-radius:24px;
+        Border-radius:24px;
 
     }
 
@@ -413,11 +419,23 @@ textarea.invalid{
 
     .back-home-btn {
 
-        margin-left:0;
-        margin-top:20px;
+        margin-left:10px;
+        margin-top:15px;
 
     }
 
+  input,
+  textarea,
+  select{
+    width:100%;
+    max-width:100%;
+    
+  }
+    input[type="date"]{
+
+      width:100%;
+      max-width:100%;
+    }
 }
 
 </style>
@@ -563,15 +581,15 @@ textarea.invalid{
             </select>
 
 
-            <label for="StartDate">
+            <label for="startDate">
               Preferred Start Date
             </label>
 
             <input
-        id="startDate"
-        type="date"
-        required
-        >
+    id="startDate"
+    type="date"
+    required
+    >
 
             <label>Typical Hours Needed</label>
 
