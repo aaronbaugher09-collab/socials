@@ -3,14 +3,18 @@
 ----------------------------------*/
 
 :root {
+
     color-scheme: light;
 
     --bg: #f2f2f7;
     --card: #ffffff;
     --text: #1c1c1e;
+
     --button: #AD9D90;
     --button-hover: #BEBEBB;
+
 }
+
 
 
 /*----------------------------------
@@ -18,53 +22,113 @@
 ----------------------------------*/
 
 * {
+
     box-sizing: border-box;
+
 }
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
 
 body {
+
     margin: 0;
+
     padding: 40px 20px;
 
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
 
     background: var(--bg);
+
     color: var(--text);
 
-    display: flex;
-    justify-content: center;
 }
-html {
-    scroll-behavior: smooth;
-}
+
+
 
 /*----------------------------------
-    NAVIGATION BAR
+    WEBSITE CONTAINER
 ----------------------------------*/
 
+
+.container {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    background: var(--card);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
+
+    animation: fadeIn .8s ease;
+
+}
+
+
+
+/*----------------------------------
+    NAVIGATION
+----------------------------------*/
+
+
 nav {
+
     position: sticky;
+
     top: 0;
 
     z-index: 1000;
 
+
     width: 100%;
 
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     gap: 25px;
+
 
     padding: 18px 20px;
 
-    background: rgba(255,255,255,.95);
+
+    background:
+        rgba(255,255,255,.95);
+
 
     backdrop-filter: blur(12px);
 
-    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+
+    border-radius:
+        30px 30px 0 0;
+
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,.08);
+
 }
 
 
+
 nav a {
+
     color: var(--text);
 
     text-decoration: none;
@@ -72,15 +136,18 @@ nav a {
     font-weight: 600;
 
     transition: .2s ease;
+
 }
+
 
 
 nav a:hover {
+
     opacity: .7;
+
 }
 
 
-/* Book Consultation Button */
 
 .nav-button {
 
@@ -95,6 +162,7 @@ nav a:hover {
 }
 
 
+
 .nav-button:hover {
 
     background: var(--button-hover);
@@ -102,207 +170,297 @@ nav a:hover {
     opacity: 1;
 
 }
-/*----------------------------------
-    WEBSITE CONTAINER
-----------------------------------*/
 
-.container {
-    width: 100%;
-    max-width: 1100px;
-
-    margin: auto;
-
-    background: var(--card);
-
-    border-radius: 30px;
-    overflow: hidden;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,.15);
-
-    animation: fadeIn .8s ease;
-}
 
 
 /*----------------------------------
-    ANIMATIONS
+    ANIMATION
 ----------------------------------*/
+
 
 @keyframes fadeIn {
 
+
     from {
+
         opacity: 0;
+
         transform: translateY(20px);
+
     }
 
+
     to {
+
         opacity: 1;
+
         transform: translateY(0);
+
     }
 
 }
 
 
+
 /*----------------------------------
-    BANNER IMAGE
+    BANNER
 ----------------------------------*/
 
+
 .banner {
+
     height: 350px;
 
+
     background:
+
         linear-gradient(
             rgba(0,0,0,.25),
             rgba(0,0,0,.25)
         ),
+
         url("Flowers.JPG");
 
+
     background-size: cover;
+
     background-position: center;
+
 }
+
 
 
 /*----------------------------------
     PROFILE IMAGE
 ----------------------------------*/
 
+
 .profile {
+
     width: 200px;
+
     height: 200px;
 
+
     border-radius: 50%;
+
     object-fit: cover;
+
 
     display: block;
 
-    margin: -100px auto 0;
 
-    border: 5px solid white;
-    background: white;
+    margin:
+        -100px auto 0;
 
-    box-shadow: 0 6px 18px rgba(0,0,0,.25);
+
+    border:
+        5px solid white;
+
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.25);
+
 }
+
 
 
 /*----------------------------------
-    CONTENT SECTION
+    CONTENT
 ----------------------------------*/
 
+
 .content {
+
     padding: 40px;
+
     text-align: center;
+
 }
+
 
 
 h1 {
+
     margin: 10px 0 5px;
+
     font-size: 42px;
+
 }
+
 
 
 .subtitle {
+
     opacity: .75;
-    margin-bottom: 20px;
+
     font-size: 18px;
+
 }
+
 
 
 .bio {
+
     line-height: 1.8;
+
     opacity: .8;
-    margin-bottom: 30px;
+
 
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+
+    margin:
+        20px auto 30px;
+
 }
+
 
 
 /*----------------------------------
     BUTTONS
 ----------------------------------*/
 
+
 .cta-button,
 .link {
 
+
     display: block;
 
-    background: var(--button);
+
+    background:
+        var(--button);
+
+
     color: white;
+
 
     text-decoration: none;
 
+
     padding: 16px;
+
+
     border-radius: 14px;
+
 
     margin-bottom: 12px;
 
-    font-weight: 600;
-    font-size: 17px;
 
-    transform: translateY(0);
-    transition: all .25s ease;
+    font-weight: 600;
+
+
+    transition: .25s ease;
+
 }
+
 
 
 .cta-button:hover,
 .link:hover {
 
-    background: var(--button-hover);
-    transform: translateY(-2px);
+
+    background:
+        var(--button-hover);
+
+
+    transform:
+        translateY(-2px);
 
 }
+
+
+
+/*----------------------------------
+    FUTURE SECTIONS
+----------------------------------*/
+
+
+.future-section {
+
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+
+}
+
 
 
 /*----------------------------------
     FOOTER
 ----------------------------------*/
 
+
 .footer {
-    margin-top: 25px;
+
+    padding: 30px;
+
+    text-align: center;
+
     font-size: 14px;
+
     opacity: .6;
+
 }
 
 
+
 /*----------------------------------
-    MOBILE RESPONSIVE STYLES
+    MOBILE
 ----------------------------------*/
 
-@media (max-width: 768px) {
+
+@media(max-width:768px){
+
 
     body {
+
         padding: 20px 10px;
+
     }
 
-    .container {
-        border-radius: 24px;
+
+    nav {
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+
     }
+
 
     .banner {
+
         height: 220px;
+
     }
+
 
     .profile {
+
         width: 150px;
+
         height: 150px;
 
-        margin: -75px auto 0;
+        margin:
+            -75px auto 0;
+
     }
+
 
     .content {
+
         padding: 25px;
+
     }
+
 
     h1 {
+
         font-size: 32px;
-    }
 
-    .subtitle {
-        font-size: 16px;
-    }
-
-    .bio {
-        line-height: 1.6;
     }
 
 }
