@@ -179,15 +179,19 @@ h1{
 
 .back-home-btn {
 
-    position:sticky;
+    position:fixed;
 
     top:20px;
 
     z-index:1000;
 
-    display:inline-block;
+    display:block;
 
-    margin:20px;
+    width:fit-content;
+
+    margin-left:auto;
+
+    margin-right:10px;
 
     background:var(--button);
 
@@ -439,9 +443,8 @@ textarea.invalid{
 
 
     .back-home-btn {
-
-        margin-left:10px;
-        margin-top:15px;
+        margin-left:auto;
+        margin-top:auto;
 
     }
 
@@ -465,12 +468,10 @@ textarea.invalid{
 
 
 <body>
-
-<div class="card">
-  
 <a href="index.html" class="back-home-btn">
             ← Back
         </a>
+<div class="card">
   
     <div class="form-banner"></div>
 
