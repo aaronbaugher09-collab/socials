@@ -71,7 +71,9 @@ body {
 
     border-radius: 30px;
 
-    isolation:isolate;
+    position: relative;
+
+    isolation: isolate;
 
     box-shadow:
         0 10px 30px rgba(0,0,0,.15);
@@ -80,10 +82,20 @@ body {
 
 }
 
+
+
+/* Clips banner/content without breaking sticky nav */
+
 .site-content {
+
     overflow: hidden;
-    border-radius: 0 0 30px 30px;
+
+    border-radius:
+        0 0 30px 30px;
+
 }
+
+
 
 /*----------------------------------
     NAVIGATION
@@ -108,6 +120,7 @@ nav {
 
     align-items: center;
 
+
     gap: 25px;
 
 
@@ -118,11 +131,8 @@ nav {
         rgba(255,255,255,.95);
 
 
-    backdrop-filter: blur(12px);
-
-
-    border-radius:
-        30px 30px 0 0;
+    backdrop-filter:
+        blur(12px);
 
 
     box-shadow:
@@ -154,15 +164,24 @@ nav a:hover {
 
 
 
+/* Book Consultation Button */
+
 .nav-button {
 
-    background: var(--button);
+    background:
+        var(--button);
 
-    color: white !important;
 
-    padding: 10px 18px;
+    color:
+        white !important;
 
-    border-radius: 999px;
+
+    padding:
+        10px 18px;
+
+
+    border-radius:
+        999px;
 
 }
 
@@ -170,7 +189,8 @@ nav a:hover {
 
 .nav-button:hover {
 
-    background: var(--button-hover);
+    background:
+        var(--button-hover);
 
     opacity: 1;
 
@@ -190,7 +210,8 @@ nav a:hover {
 
         opacity: 0;
 
-        transform: translateY(20px);
+        transform:
+            translateY(20px);
 
     }
 
@@ -199,7 +220,8 @@ nav a:hover {
 
         opacity: 1;
 
-        transform: translateY(0);
+        transform:
+            translateY(0);
 
     }
 
@@ -227,9 +249,12 @@ nav a:hover {
         url("Flowers.JPG");
 
 
-    background-size: cover;
+    background-size:
+        cover;
 
-    background-position: center;
+
+    background-position:
+        center;
 
 }
 
@@ -242,17 +267,24 @@ nav a:hover {
 
 .profile {
 
-    width: 200px;
-
-    height: 200px;
-
-
-    border-radius: 50%;
-
-    object-fit: cover;
+    width:
+        200px;
 
 
-    display: block;
+    height:
+        200px;
+
+
+    border-radius:
+        50%;
+
+
+    object-fit:
+        cover;
+
+
+    display:
+        block;
 
 
     margin:
@@ -261,6 +293,10 @@ nav a:hover {
 
     border:
         5px solid white;
+
+
+    background:
+        white;
 
 
     box-shadow:
@@ -277,9 +313,12 @@ nav a:hover {
 
 .content {
 
-    padding: 40px;
+    padding:
+        40px;
 
-    text-align: center;
+
+    text-align:
+        center;
 
 }
 
@@ -287,9 +326,12 @@ nav a:hover {
 
 h1 {
 
-    margin: 10px 0 5px;
+    margin:
+        10px 0 5px;
 
-    font-size: 42px;
+
+    font-size:
+        42px;
 
 }
 
@@ -297,9 +339,12 @@ h1 {
 
 .subtitle {
 
-    opacity: .75;
+    opacity:
+        .75;
 
-    font-size: 18px;
+
+    font-size:
+        18px;
 
 }
 
@@ -307,12 +352,17 @@ h1 {
 
 .bio {
 
-    line-height: 1.8;
+    line-height:
+        1.8;
 
-    opacity: .8;
+
+    opacity:
+        .8;
 
 
-    max-width: 700px;
+    max-width:
+        700px;
+
 
     margin:
         20px auto 30px;
@@ -330,32 +380,40 @@ h1 {
 .link {
 
 
-    display: block;
+    display:
+        block;
 
 
     background:
         var(--button);
 
 
-    color: white;
+    color:
+        white;
 
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
 
-    padding: 16px;
+    padding:
+        16px;
 
 
-    border-radius: 14px;
+    border-radius:
+        14px;
 
 
-    margin-bottom: 12px;
+    margin-bottom:
+        12px;
 
 
-    font-weight: 600;
+    font-weight:
+        600;
 
 
-    transition: .25s ease;
+    transition:
+        .25s ease;
 
 }
 
@@ -383,11 +441,12 @@ h1 {
 
 .future-section {
 
+    padding:
+        50px 40px;
 
-    padding: 50px 40px;
 
-    text-align: center;
-
+    text-align:
+        center;
 
 }
 
@@ -400,13 +459,20 @@ h1 {
 
 .footer {
 
-    padding: 30px;
+    padding:
+        30px;
 
-    text-align: center;
 
-    font-size: 14px;
+    text-align:
+        center;
 
-    opacity: .6;
+
+    font-size:
+        14px;
+
+
+    opacity:
+        .6;
 
 }
 
@@ -422,32 +488,44 @@ h1 {
 
     body {
 
-        padding: 20px 10px;
+        padding:
+            20px 10px;
 
     }
+
 
 
     nav {
 
-        flex-wrap: wrap;
+        flex-wrap:
+            wrap;
 
-        gap: 15px;
+
+        gap:
+            15px;
 
     }
+
 
 
     .banner {
 
-        height: 220px;
+        height:
+            220px;
 
     }
 
 
+
     .profile {
 
-        width: 150px;
+        width:
+            150px;
 
-        height: 150px;
+
+        height:
+            150px;
+
 
         margin:
             -75px auto 0;
@@ -455,16 +533,20 @@ h1 {
     }
 
 
+
     .content {
 
-        padding: 25px;
+        padding:
+            25px;
 
     }
 
 
+
     h1 {
 
-        font-size: 32px;
+        font-size:
+            32px;
 
     }
 
