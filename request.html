@@ -293,12 +293,24 @@ select{
     background:white;
 
 }
+/*----------------------------------
+    DATE INPUT
+----------------------------------*/
+
+input[type="date"] {
+
+    cursor:pointer;
+
+    min-height:48px;
+
+    display:block;
+
+}
 
 
-textarea{
+input[type="date"]::-webkit-calendar-picker-indicator {
 
-    resize:none;
-    height:120px;
+    cursor:pointer;
 
 }
 
@@ -486,14 +498,15 @@ textarea.invalid{
             </select>
 
 
-            <label>Preferred Start Date</label>
+            <label for="StartDate">
+              Preferred Start Date
+            </label>
 
             <input
-                id="startDate"
-                type="date"
-                required
-            >
-
+    id="startDate"
+    type="date"
+    required
+    >
 
             <label>Typical Hours Needed</label>
 
