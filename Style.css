@@ -23,14 +23,13 @@
 
 body {
     margin: 0;
-    padding: 30px 15px;
+    padding: 40px 20px;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
     color: var(--text);
     display: flex;
     justify-content: center;
 }
-
 
 /*----------------------------------
     STICKY NAVIGATION BAR
