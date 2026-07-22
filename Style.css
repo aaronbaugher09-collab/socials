@@ -33,7 +33,9 @@ body {
     display: flex;
     justify-content: center;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 /*----------------------------------
     NAVIGATION BAR
 ----------------------------------*/
