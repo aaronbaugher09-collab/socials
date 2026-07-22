@@ -1,4 +1,10 @@
+/*----------------------------------
+    GLOBAL VARIABLES
+----------------------------------*/
+
 :root {
+    color-scheme: light;
+
     --bg: #f2f2f7;
     --card: #ffffff;
     --text: #1c1c1e;
@@ -6,15 +12,10 @@
     --button-hover: #BEBEBB;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #000000;
-        --card: #1c1c1e;
-        --text: #ffffff;
-        --button: #BEBEBB;
-        --button-hover: #AD9D90;
-    }
-}
+
+/*----------------------------------
+    GLOBAL STYLES
+----------------------------------*/
 
 * {
     box-sizing: border-box;
@@ -30,6 +31,32 @@ body {
     justify-content: center;
 }
 
+
+/*----------------------------------
+    STICKY NAVIGATION BAR
+----------------------------------*/
+
+/* This is ready for later when we
+   build the navigation menu. */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: var(--card);
+    padding: 15px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+
+/*----------------------------------
+    MAIN CARD
+----------------------------------*/
+
 .card {
     width: 100%;
     max-width: 420px;
@@ -40,7 +67,13 @@ body {
     animation: fadeIn .8s ease;
 }
 
+
+/*----------------------------------
+    ANIMATIONS
+----------------------------------*/
+
 @keyframes fadeIn {
+
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -50,59 +83,72 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
+
+
+/*----------------------------------
+    BANNER IMAGE
+----------------------------------*/
 
 .banner {
     height: 220px;
+
     background:
-        linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)),
+        linear-gradient(
+            rgba(0,0,0,.25),
+            rgba(0,0,0,.25)
+        ),
         url("Flowers.JPG");
+
     background-size: cover;
     background-position: center;
 }
-.cta-button {
-    display: block;
-    background: var(--button);
-    color: white;
-    text-decoration: none;
-    padding: 16px;
-    border-radius: 14px;
-    margin-bottom: 12px;
-    font-weight: 600;
-    transform: translateY(0);
-    transition: all .25s ease;
-}
 
-.cta-button:hover {
-    background: var(--button-hover);
-    transform: translateY(-2px);
-}
+
+/*----------------------------------
+    PROFILE IMAGE
+----------------------------------*/
+
 .profile {
     width: 150px;
     height: 150px;
+
     border-radius: 50%;
     object-fit: cover;
+
     display: block;
+
     margin: -75px auto 0;
+
     border: 5px solid white;
     background: white;
+
     box-shadow: 0 6px 18px rgba(0,0,0,.25);
 }
+
+
+/*----------------------------------
+    CONTENT SECTION
+----------------------------------*/
 
 .content {
     padding: 20px 30px 30px;
     text-align: center;
 }
 
+
 h1 {
     margin: 10px 0 5px;
     font-size: 32px;
 }
 
+
 .subtitle {
     opacity: .75;
     margin-bottom: 20px;
 }
+
 
 .bio {
     line-height: 1.6;
@@ -110,23 +156,45 @@ h1 {
     margin-bottom: 30px;
 }
 
+
+/*----------------------------------
+    BUTTONS
+----------------------------------*/
+
+.cta-button,
 .link {
+
     display: block;
+
     background: var(--button);
     color: white;
+
     text-decoration: none;
+
     padding: 16px;
     border-radius: 14px;
+
     margin-bottom: 12px;
+
     font-weight: 600;
+
     transform: translateY(0);
     transition: all .25s ease;
 }
 
+
+.cta-button:hover,
 .link:hover {
+
     background: var(--button-hover);
     transform: translateY(-2px);
+
 }
+
+
+/*----------------------------------
+    FOOTER
+----------------------------------*/
 
 .footer {
     margin-top: 25px;
@@ -134,13 +202,23 @@ h1 {
     opacity: .6;
 }
 
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 
-    background: white;
-    padding: 15px;
+/*----------------------------------
+    MOBILE RESPONSIVE STYLES
+----------------------------------*/
 
-    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+@media (max-width: 480px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
 }
