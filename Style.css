@@ -36,41 +36,35 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
 /*----------------------------------
     NAVIGATION BAR
 ----------------------------------*/
 
 nav {
-
     position: sticky;
-    top: 15px;
+    top: 0;
 
     z-index: 1000;
 
-    width: fit-content;
-
-    margin: 20px auto;
-
-    padding: 12px 20px;
+    width: 100%;
 
     display: flex;
-    gap: 20px;
+    justify-content: center;
     align-items: center;
+    gap: 25px;
 
-    background: rgba(255,255,255,.85);
+    padding: 18px 20px;
+
+    background: rgba(255,255,255,.95);
 
     backdrop-filter: blur(12px);
 
-    border-radius: 999px;
-
-    box-shadow:
-        0 8px 20px rgba(0,0,0,.10);
-
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
 
 
 nav a {
-
     color: var(--text);
 
     text-decoration: none;
@@ -78,24 +72,21 @@ nav a {
     font-weight: 600;
 
     transition: .2s ease;
-
 }
 
 
 nav a:hover {
-
     opacity: .7;
-
 }
 
 
-/* Consultation Button */
+/* Book Consultation Button */
 
 .nav-button {
 
     background: var(--button);
 
-    color: white;
+    color: white !important;
 
     padding: 10px 18px;
 
@@ -111,7 +102,6 @@ nav a:hover {
     opacity: 1;
 
 }
-
 /*----------------------------------
     WEBSITE CONTAINER
 ----------------------------------*/
