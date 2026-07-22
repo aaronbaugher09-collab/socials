@@ -113,7 +113,7 @@ nav {
     border-radius: 50%;
     object-fit: cover;
 
-    display: container;
+    display: block;
 
     margin: -75px auto 0;
 
