@@ -1,210 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Miss Ashlyn's Sitter Services</title>
 
-<!-- Favicons -->
-<link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+<link rel="icon" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
-<link rel="shortcut icon" href="favicon.png">
 
-<style>
-:root {
-    --bg: #f2f2f7;
-    --card: #ffffff;
-    --text: #1c1c1e;
-    --button: #AD9D90;
-    --button-hover: #BEBEBB;
-}
+<link rel="stylesheet" href="Style.css">
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #000000;
-        --card: #1c1c1e;
-        --text: #ffffff;
-        --button: #BEBEBB;
-        --button-hover: #AD9D90;
-    }
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 30px 15px;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    display: flex;
-    justify-content: center;
-}
-
-.card {
-    width: 100%;
-    max-width: 420px;
-    background: var(--card);
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,.15);
-    animation: fadeIn .8s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.banner {
-    height: 220px;
-    background:
-        linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)),
-        url("Flowers.JPG");
-    background-size: cover;
-    background-position: center;
-}
-.cta-button {
-    display: block;
-    background: var(--button);
-    color: white;
-    text-decoration: none;
-    padding: 16px;
-    border-radius: 14px;
-    margin-bottom: 12px;
-    font-weight: 600;
-    transform: translateY(0);
-    transition: all .25s ease;
-}
-
-.cta-button:hover {
-    background: var(--button-hover);
-    transform: translateY(-2px);
-}
-.profile {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: -75px auto 0;
-    border: 5px solid white;
-    background: white;
-    box-shadow: 0 6px 18px rgba(0,0,0,.25);
-}
-
-.content {
-    padding: 20px 30px 30px;
-    text-align: center;
-}
-
-h1 {
-    margin: 10px 0 5px;
-    font-size: 32px;
-}
-
-.subtitle {
-    opacity: .75;
-    margin-bottom: 20px;
-}
-
-.bio {
-    line-height: 1.6;
-    opacity: .8;
-    margin-bottom: 30px;
-}
-
-.link {
-    display: block;
-    background: var(--button);
-    color: white;
-    text-decoration: none;
-    padding: 16px;
-    border-radius: 14px;
-    margin-bottom: 12px;
-    font-weight: 600;
-    transform: translateY(0);
-    transition: all .25s ease;
-}
-
-.link:hover {
-    background: var(--button-hover);
-    transform: translateY(-2px);
-}
-
-.footer {
-    margin-top: 25px;
-    font-size: 14px;
-    opacity: .6;
-}
-</style>
 </head>
+
 
 <body>
 
-<div class="card">
 
-    <div class="banner"></div>
+    <!-- Sticky Navigation -->
+    <div class="nav-wrapper">
 
-    <img src="IMG_1141.jpeg" alt="Profile Picture" class="profile">
+        <nav>
 
-    <div class="content">
+            <a href="#home">Home</a>
 
-        <h1>Miss Ashlyn Baugher</h1>
+            <a href="#about">About</a>
 
-        <p class="subtitle">
-            Connect with me!
-        </p>
+            <a href="#services">Services</a>
 
-        <p class="bio">
-            Rates, specialties, or a short professional bio can go here.
-        </p>
+            <a href="#faqs">FAQs</a>
 
-        <a href="request.html" class="cta-button">
-            Book a Consultation
-        </a>
+            <a href="request.html" class="nav-button">
+                Get in touch!
+            </a>
 
-        <a class="link" href="https://instagram.com">
-            Instagram
-        </a>
+        </nav>
 
-        <a class="link" href="https://www.facebook.com/share/1CmH8o6DLt/?mibextid=wwXIfr">
-            Facebook
-        </a>
+    </div>
 
-        <a class="link" href="https://linkedin.com/in/">
-            LinkedIn
-        </a>
 
-        <a class="link" href="mailto:Missashlynssitterservices@gmail.com">
-            Email Me
-        </a>
+<div class="container">
+    <div class="site-content">
 
-        <a class="link" href="tel:+1620......">
-            Call Me
-        </a>
 
-        <a class="link" href="sms:+1620......">
-            Text Me
-        </a>
+        <!-- Home Section -->
+        <section id="home">
+
+
+            <div class="banner"></div>
+
+
+            <img
+                src="IMG_1141.jpeg"
+                alt="Profile Picture"
+                class="profile"
+            >
+
+
+            <div class="content">
+
+
+                <h1>
+                    Miss Ashlyn Baugher
+                </h1>
+
+
+                <p class="subtitle">
+                    Trusted childcare services for your family
+                </p>
+
+
+                <p class="bio">
+                    Rates, specialties, or a short professional bio can go here.
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <section id="about" class="future-section">
+
+            <h2>
+                About Ashlyn
+            </h2>
+
+            <p>
+                Hi! My name is Miss Ashlyn and I am so happy you’re here! I am an Early Childhood Professional with over ten years of experience. I started from the bottom - a full time volunteer at a daycare center, to lead teacher in a preschool classroom for seven years, a middle school teacher for one,  then spent the last three years  as an Education Specialist for an Early Head Start/Head Start Grantee Agency.  During my time as a preschool teacher, I received my Masters of Arts in Early Childhood Education (birth - 2nd grade) along with my Illinois Professional Educators License. </p>
+<p>
+I have built strong relationships with families being their sole “date night” babysitter for over five years and have been babysitting since I was a teenager. 
+</p>
+<p>
+I am passionate about helping guide children towards being respectful and kind humans, while also focusing on developmental milestones and learning through play. Children gaining important Social and Emotional skills is key to their future success in their social world but also in their academic career. 
+</p>
+<p>
+I am excited to connect with you and answer any questions you might have!
+            </p>
+
+        </section>
+
+
+
+        <section id="services" class="future-section">
+
+            <h2>
+                Services
+            </h2>
+
+            <p>
+                Services and availability details will go here.
+            </p>
+
+        </section>
+
+
+        <section id="faqs" class="future-section">
+
+            <h2>
+                FAQs
+            </h2>
+
+            <p>
+                Frequently asked questions will go here.
+            </p>
+
+        </section>
+
 
         <div class="footer">
+
             Thanks for visiting!
+          
+      <Div class="Facebook">
+     <a class="link"
+           href="https://www.facebook.com/share/1CmH8o6DLt/?mibextid=wwXIfr">
+            More on Facebook!
+        </a>
         </div>
 
     </div>
 
+
 </div>
 
+
 </body>
+
 </html>
