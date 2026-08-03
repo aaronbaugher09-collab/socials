@@ -1,22 +1,25 @@
-// Import Firebase SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+import {
+    getAuth
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-// Replace this with YOUR Firebase config
+import {
+    getFirestore
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
 const firebaseConfig = {
 
-    apiKey: "",
+    apiKey: "AIzaSyDillpGyGbEFw08XN8f1Ggv84qyVklf4QA",
 
-    authDomain: "",
+    authDomain: "miss-ashlyn-s-sitter-services.firebaseapp.com",
 
-    projectId: "",
+    projectId: "miss-ashlyn-s-sitter-services",
 
-    storageBucket: "",
+    storageBucket: "miss-ashlyn-s-sitter-services.firebasestorage.app",
 
-    messagingSenderId: "",
+    messagingSenderId: "620608118672",
 
-    appId: ""
+    appId: "1:620608118672:web:54848933345a8ec5245d15"
 
 };
 
